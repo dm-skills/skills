@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+      body { margin: 0; }
+      .page {
+        position: relative;
+        width: 8.5in;
+        height: 11in;
+        overflow: hidden;
+        background: #ffffff;
+        color: #21252b;
+        font-family: "Libre Baskerville", Georgia, serif;
+      }
+      .header {
+        position: absolute;
+        left: 0.7in;
+        top: 0.7in;
+        right: 0.7in;
+        font-family: "Source Sans 3", Arial, sans-serif;
+        font-size: 0.18in;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+      .headline {
+        position: absolute;
+        left: 0.7in;
+        top: 1.15in;
+        width: 5.9in;
+        font-size: 0.46in;
+        line-height: 1.06;
+        font-weight: 700;
+      }
+      .body {
+        position: absolute;
+        left: 0.7in;
+        top: 2.25in;
+        width: 5.65in;
+        font-size: 0.21in;
+        line-height: 1.55;
+      }
+      .offer {
+        position: absolute;
+        right: 0.7in;
+        top: 2.35in;
+        width: 1.5in;
+        padding: 0.24in;
+        border: 0.02in solid #21252b;
+        font-family: "Source Sans 3", Arial, sans-serif;
+      }
+      .offer strong {
+        display: block;
+        margin-top: 0.06in;
+        font-size: 0.26in;
+        line-height: 1.08;
+      }
+      .signature {
+        position: absolute;
+        left: 0.7in;
+        bottom: 1.25in;
+        width: 4.5in;
+        font-size: 0.2in;
+        line-height: 1.5;
+      }
+      .ps {
+        position: absolute;
+        left: 0.7in;
+        right: 0.7in;
+        bottom: 0.55in;
+        padding-top: 0.16in;
+        border-top: 0.02in solid #d9dce2;
+        font-family: "Source Sans 3", Arial, sans-serif;
+        font-size: 0.18in;
+        line-height: 1.4;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <div class="header">Your Brand</div>
+      <div class="headline">
+        {% if recipient.first_name == blank %}
+          A personal note with a strong reason to act.
+        {% else %}
+          {{ recipient.first_name | capitalize }}, we saved this for you.
+        {% endif %}
+      </div>
+      <div class="body">
+        Dear
+        {% if recipient.first_name == blank %}
+          Neighbor,
+        {% else %}
+          {{ recipient.first_name | capitalize }},
+        {% endif %}
+        <br><br>
+        This starter letter is built for a Poplar single-page format: longer copy, clearer hierarchy, and a visible offer block.
+        Use it when you need a more private or trust-heavy message than a postcard can carry.
+        <br><br>
+        The main body should explain the problem, the value of the offer, and the exact next step. Keep paragraphs short and let the offer box do the scannable work.
+      </div>
+      <div class="offer">
+        Offer
+        <strong>{{ custom.offer_text }}</strong>
+        Code {{ custom.promo_code | upcase }}<br>
+        Visit {{ custom.short_url }}
+      </div>
+      <div class="signature">
+        Sincerely,<br><br>
+        {{ custom.signer_name }}<br>
+        {{ custom.signer_title }}
+      </div>
+      <div class="ps">
+        P.S. {{ custom.offer_text }} ends
+        {{ "now" | date: "%s" | plus: 2592000 | date: "%b %e, %Y" }}.
+        Use {{ custom.promo_code | upcase }} at {{ custom.short_url }}.
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+      body { margin: 0; }
+      .page {
+        width: 12in;
+        height: 9in;
+        display: flex;
+        background: linear-gradient(90deg, #fff8eb 0%, #ffffff 52%, #eef5ff 100%);
+        color: #1d2128;
+        font-family: Arial, sans-serif;
+      }
+      .panel {
+        width: 6in;
+        height: 9in;
+        box-sizing: border-box;
+        padding: 0.6in 0.5in;
+      }
+      .panel + .panel {
+        border-left: 0.01in solid rgba(0,0,0,0.08);
+      }
+      h2 {
+        margin: 0 0 0.18in;
+        font-size: 0.42in;
+        line-height: 1.05;
+      }
+      p {
+        margin: 0 0 0.18in;
+        font-size: 0.22in;
+        line-height: 1.34;
+      }
+      .offer {
+        margin-top: 0.3in;
+        padding: 0.28in;
+        border-radius: 0.14in;
+        background: #1d2128;
+        color: #ffffff;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <div class="panel">
+        <h2>Tell the story on the first inside panel.</h2>
+        <p>Use the inside left panel for context, proof, and the strongest support for the offer.</p>
+        <p>Self-mailers work best when the message unfolds in sequence rather than dropping all of the copy at once.</p>
+      </div>
+      <div class="panel">
+        <h2>{{first_name}}, here is the action.</h2>
+        <div class="offer">
+          <strong>{{offer_text}}</strong><br>
+          Use {{promo_code}} at {{short_url}}.
+        </div>
+        <p>Keep the response path together: offer, code, URL, and deadline.</p>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+      body { margin: 0; }
+      .page {
+        position: relative;
+        width: 16.625in;
+        height: 8.75in;
+        overflow: hidden;
+        background: linear-gradient(90deg, #f6efe3 0%, #ffffff 55%, #fdf8ee 100%);
+        color: #17191d;
+        font-family: "Source Sans 3", Arial, sans-serif;
+      }
+      .panel {
+        position: absolute;
+        top: 0;
+        height: 8.75in;
+        padding: 0.58in 0.48in;
+        box-sizing: border-box;
+      }
+      .left { left: 0; width: 5.54in; }
+      .middle { left: 5.54in; width: 5.54in; border-left: 0.01in solid rgba(0,0,0,0.08); }
+      .right { left: 11.08in; width: 5.545in; border-left: 0.01in solid rgba(0,0,0,0.08); }
+      .kicker {
+        font-size: 0.18in;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+      }
+      h1, h2 {
+        margin: 0.18in 0 0;
+        font-family: "Montserrat", Arial, sans-serif;
+        font-weight: 800;
+        letter-spacing: -0.02em;
+      }
+      h1 { font-size: 0.48in; line-height: 1.02; }
+      h2 { font-size: 0.34in; line-height: 1.05; }
+      p {
+        margin: 0.18in 0 0;
+        font-size: 0.22in;
+        line-height: 1.32;
+      }
+      .offer {
+        margin-top: 0.28in;
+        padding: 0.26in;
+        border-radius: 0.14in;
+        background: #17191d;
+        color: #ffffff;
+      }
+      .offer strong {
+        display: block;
+        margin-top: 0.08in;
+        font-family: "Montserrat", Arial, sans-serif;
+        font-size: 0.32in;
+        line-height: 1.08;
+      }
+      .footer {
+        position: absolute;
+        left: 0.48in;
+        right: 0.48in;
+        bottom: 0.58in;
+        font-size: 0.17in;
+        line-height: 1.3;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <!-- Verify panel order against the official Poplar trifold template before final upload. -->
+      <div class="panel left">
+        <div class="kicker">Panel one</div>
+        <h2>Lead with one proof point.</h2>
+        <p>Use the first visible panel to earn the open. This area works well for a concise benefit, a short testimonial, or a product or service explainer.</p>
+      </div>
+      <div class="panel middle">
+        <div class="kicker">Center spread</div>
+        <h1>
+          {% if recipient.first_name == blank %}
+            Show the strongest message in the center panel.
+          {% else %}
+            {{ recipient.first_name | capitalize }}, here's what to do next.
+          {% endif %}
+        </h1>
+        <p>Use the center panel for the core pitch and the main story sequence.</p>
+      </div>
+      <div class="panel right">
+        <div class="kicker">Response panel</div>
+        <h2>Make the action unavoidable.</h2>
+        <div class="offer">
+          Offer
+          <strong>{{ custom.offer_text }}</strong>
+          Code {{ custom.promo_code | upcase }}<br>
+          {{ custom.short_url }}
+        </div>
+        <div class="footer">
+          Best when the CTA remains visible immediately after the first unfold.
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

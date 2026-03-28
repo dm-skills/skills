@@ -1,0 +1,113 @@
+DM Skills Internal Use License v1.0
+
+Copyright (c) 2026 Chris Korhonen
+
+This license governs the use, copying, modification, and distribution of the
+DM Skills repository and the skill materials it contains. This license is not
+an open source license.
+
+1. Definitions
+
+"Licensed Materials" means the contents of this repository, including all
+skill files, prompts, instructions, documentation, examples, and derivative
+works of those materials.
+
+"Output" means campaign plans, copy, designs, recommendations, analyses, or
+other work product generated through your permitted use of the Licensed
+Materials.
+
+"Your Organization" means the individual or legal entity using the Licensed
+Materials for its own internal business, together with that individual's or
+entity's employees and internal contractors. "Your Organization" does not
+include clients, customers, agencies, consultancies, service providers, mail
+houses, printers, direct mail companies, or other vendors using the Licensed
+Materials to deliver services to any Third Party.
+
+"Third Party" means any person or entity other than Your Organization.
+
+2. License Grant
+
+Subject to this license, you are granted a limited, non-exclusive,
+non-transferable, non-sublicensable license to:
+
+- use the Licensed Materials internally within Your Organization;
+- copy the Licensed Materials as reasonably necessary for that internal use;
+- modify the Licensed Materials for Your Organization's internal use only.
+
+3. Permitted Use
+
+You may use the Licensed Materials to plan, create, execute, and measure direct
+mail campaigns for Your Organization's own business, operations, or brands.
+
+You may use Output for any lawful purpose, including commercial purposes,
+provided your use of the Licensed Materials complies with this license.
+
+4. Prohibited Use
+
+You may not, without prior written permission from the copyright holder:
+
+- use the Licensed Materials to provide services to Third Parties;
+- use the Licensed Materials on behalf of clients, customers, or other Third
+  Parties;
+- use the Licensed Materials to create, manage, optimize, automate, or advise
+  on direct mail campaigns for clients, customers, or other Third Parties;
+- allow an agency, consultancy, service provider, mail house, printer, direct
+  mail company, or similar vendor to use the Licensed Materials for your
+  benefit where that vendor is performing client or third-party service work;
+- use the Licensed Materials in an agency, consultancy, service bureau, mail
+  house, printer, direct mail company, or similar service business for client
+  work;
+- sell, license, sublicense, rent, lease, distribute, publish, share, or
+  otherwise make the Licensed Materials available to any Third Party;
+- copy, repackage, white-label, or resell the Licensed Materials, whether as a
+  standalone product or as part of another product, service, template,
+  prompt pack, skill pack, course, API, or SaaS offering;
+- make the Licensed Materials available in a public repository or other public
+  distribution channel.
+
+5. Internal Modifications
+
+You may create internal modifications or adaptations of the Licensed Materials,
+but those modifications remain Licensed Materials and may only be used under
+this license. You may not distribute those modifications to any Third Party.
+
+6. Ownership
+
+The Licensed Materials are licensed, not sold. All rights not expressly granted
+under this license are reserved by the copyright holder.
+
+This license does not transfer any copyright, trademark, trade secret, or other
+intellectual property rights in the Licensed Materials.
+
+7. Trademarks
+
+This license does not grant any right to use the names, trademarks, service
+marks, or logos of the copyright holder or the project, except as reasonably
+necessary to identify the source of the Licensed Materials.
+
+8. Termination
+
+This license terminates automatically if you violate any term of it. Upon
+termination, you must stop using the Licensed Materials and delete all copies in
+your possession or control, except to the extent the law does not permit that
+requirement.
+
+9. No Warranty
+
+THE LICENSED MATERIALS ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING WARRANTIES OF MERCHANTABILITY, FITNESS FOR A
+PARTICULAR PURPOSE, TITLE, AND NON-INFRINGEMENT.
+
+10. Limitation of Liability
+
+TO THE MAXIMUM EXTENT PERMITTED BY LAW, THE COPYRIGHT HOLDER WILL NOT BE LIABLE
+FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, EXEMPLARY, OR PUNITIVE
+DAMAGES, OR FOR ANY LOSS OF DATA, PROFITS, REVENUE, GOODWILL, OR BUSINESS
+INTERRUPTION, ARISING OUT OF OR RELATED TO THE LICENSED MATERIALS OR THIS
+LICENSE, EVEN IF ADVISED OF THE POSSIBILITY OF THOSE DAMAGES.
+
+11. Separate Licensing
+
+If you want to use the Licensed Materials for client services, redistribution,
+resale, white-labeling, or other uses not expressly permitted here, you must
+obtain a separate written license from the copyright holder.

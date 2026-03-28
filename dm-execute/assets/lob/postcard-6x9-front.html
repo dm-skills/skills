@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+      body { margin: 0; }
+      .page {
+        width: 6.25in;
+        height: 9.25in;
+        box-sizing: border-box;
+        padding: 0.55in;
+        background: linear-gradient(180deg, #eef5ff 0%, #ffffff 72%);
+        color: #1d2430;
+        font-family: Georgia, "Times New Roman", serif;
+      }
+      .eyebrow {
+        display: inline-block;
+        padding: 0.08in 0.16in;
+        border-radius: 0.18in;
+        background: #1d2430;
+        color: #ffffff;
+        font: 700 0.17in/1 Arial, sans-serif;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+      }
+      h1 {
+        margin: 0.28in 0 0.2in;
+        font-size: 0.62in;
+        line-height: 0.98;
+        letter-spacing: -0.02em;
+      }
+      p {
+        margin: 0;
+        max-width: 4.8in;
+        font: 0.23in/1.35 Arial, sans-serif;
+      }
+      .offer {
+        margin-top: 0.5in;
+        width: 3.9in;
+        padding: 0.28in;
+        border-radius: 0.15in;
+        background: #1d2430;
+        color: #ffffff;
+        font-family: Arial, sans-serif;
+      }
+      .offer strong {
+        display: block;
+        margin-top: 0.08in;
+        font-size: 0.34in;
+        line-height: 1.08;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <div class="eyebrow">Personalized offer</div>
+      <h1>{{first_name}}, this deserves a look.</h1>
+      <p>Use Lob postcard fronts for one headline, one visual idea, and one clear reason to keep reading.</p>
+      <div class="offer">
+        Offer
+        <strong>{{offer_text}}</strong>
+        Code {{promo_code}}
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+      body { margin: 0; }
+      .page {
+        position: relative;
+        width: 6.25in;
+        height: 9.25in;
+        overflow: hidden;
+        background: #fffdf8;
+        color: #1c1f24;
+        font-family: "Source Sans 3", Arial, sans-serif;
+      }
+      .headline {
+        position: absolute;
+        left: 0.5in;
+        top: 0.52in;
+        width: 3.65in;
+        font: 800 0.38in/1.02 "Montserrat", Arial, sans-serif;
+      }
+      .body {
+        position: absolute;
+        left: 0.5in;
+        top: 1.55in;
+        width: 3.45in;
+        font-size: 0.22in;
+        line-height: 1.24;
+      }
+      .cta-box {
+        position: absolute;
+        left: 0.5in;
+        bottom: 0.72in;
+        width: 2.95in;
+        padding: 0.26in;
+        border: 0.03in solid #1c1f24;
+        border-radius: 0.15in;
+      }
+      .cta-label {
+        font-size: 0.17in;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+      }
+      .cta-copy {
+        margin-top: 0.08in;
+        font: 700 0.27in/1.12 "Montserrat", Arial, sans-serif;
+      }
+      .cta-meta {
+        margin-top: 0.1in;
+        font-size: 0.19in;
+        line-height: 1.22;
+      }
+      .address-safe-note {
+        position: absolute;
+        right: 0.55in;
+        top: 0.65in;
+        width: 1.55in;
+        font-size: 0.16in;
+        line-height: 1.25;
+        color: #767d88;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <!-- Keep the lower-right region clear for Poplar's auto-applied address block. -->
+      <div class="headline">Keep the offer complete on the back.</div>
+      <div class="body">
+        Use the back to restate the value, explain the qualifier, and make the next action obvious.
+        If only one side is dynamic, this side can stay HTML while the other side remains static.
+      </div>
+      <div class="cta-box">
+        <div class="cta-label">Next step</div>
+        <div class="cta-copy">Visit {{ custom.short_url }}</div>
+        <div class="cta-meta">
+          Code {{ custom.promo_code | upcase }}<br>
+          {{ custom.support_line }}
+        </div>
+      </div>
+      <div class="address-safe-note">
+        Design all content away from the auto-applied address zone.
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+      body { margin: 0; }
+      .page {
+        position: relative;
+        width: 6.25in;
+        height: 9.25in;
+        overflow: hidden;
+        background: linear-gradient(180deg, #fff7e9 0%, #ffffff 68%);
+        color: #1b1d1f;
+        font-family: "Source Sans 3", Arial, sans-serif;
+      }
+      .brand {
+        position: absolute;
+        left: 0.55in;
+        top: 0.45in;
+        font: 700 0.22in/1 "Montserrat", Arial, sans-serif;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+      .hero {
+        position: absolute;
+        left: 0.55in;
+        top: 1.05in;
+        width: 5.15in;
+      }
+      .eyebrow {
+        display: inline-block;
+        margin-bottom: 0.18in;
+        padding: 0.08in 0.14in;
+        border-radius: 0.18in;
+        background: #1b1d1f;
+        color: #ffffff;
+        font-size: 0.18in;
+        font-weight: 700;
+        letter-spacing: 0.03em;
+        text-transform: uppercase;
+      }
+      h1 {
+        margin: 0;
+        font: 800 0.58in/0.96 "Montserrat", Arial, sans-serif;
+        letter-spacing: -0.02em;
+      }
+      .subhead {
+        margin-top: 0.22in;
+        font-size: 0.24in;
+        line-height: 1.22;
+        max-width: 4.65in;
+      }
+      .offer-box {
+        position: absolute;
+        left: 0.55in;
+        bottom: 0.72in;
+        width: 3.8in;
+        padding: 0.26in 0.3in;
+        border-radius: 0.16in;
+        background: #1b1d1f;
+        color: #ffffff;
+      }
+      .offer-label {
+        font-size: 0.18in;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        opacity: 0.82;
+      }
+      .offer-copy {
+        margin-top: 0.1in;
+        font: 800 0.38in/1.06 "Montserrat", Arial, sans-serif;
+      }
+      .offer-meta {
+        margin-top: 0.14in;
+        font-size: 0.19in;
+        line-height: 1.24;
+      }
+      .corner-accent {
+        position: absolute;
+        right: -0.5in;
+        top: -0.5in;
+        width: 2.2in;
+        height: 2.2in;
+        border-radius: 50%;
+        background: #ffd77b;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <div class="corner-accent"></div>
+      <div class="brand">Your Brand</div>
+      <div class="hero">
+        <div class="eyebrow">Personalized offer</div>
+        <h1>
+          {% if recipient.first_name == blank %}
+            A better offer just arrived.
+          {% else %}
+            {{ recipient.first_name | capitalize }}, this one is for you.
+          {% endif %}
+        </h1>
+        <div class="subhead">
+          Reconnect with a clear, high-contrast front panel that can carry one message, one offer, and one response path.
+        </div>
+      </div>
+      <div class="offer-box">
+        <div class="offer-label">Offer</div>
+        <div class="offer-copy">{{ custom.offer_text }}</div>
+        <div class="offer-meta">
+          Use code {{ custom.promo_code | upcase }} by
+          {{ "now" | date: "%s" | plus: 2592000 | date: "%b %e, %Y" }}.
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

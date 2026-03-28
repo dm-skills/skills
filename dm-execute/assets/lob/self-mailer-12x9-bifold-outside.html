@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+      body { margin: 0; }
+      .page {
+        width: 12in;
+        height: 9in;
+        display: flex;
+        background: #f8fbff;
+        color: #1d2128;
+        font-family: Arial, sans-serif;
+      }
+      .panel {
+        width: 6in;
+        height: 9in;
+        box-sizing: border-box;
+        padding: 0.6in 0.5in;
+      }
+      .panel + .panel {
+        border-left: 0.01in solid rgba(0,0,0,0.08);
+      }
+      h1, h2 {
+        margin: 0 0 0.18in;
+        line-height: 1.04;
+      }
+      h1 { font-size: 0.54in; }
+      h2 { font-size: 0.3in; }
+      p {
+        margin: 0 0 0.16in;
+        font-size: 0.22in;
+        line-height: 1.32;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Verify panel order and postal clear areas against Lob's official 12x9 bifold template before production. -->
+    <div class="page">
+      <div class="panel">
+        <h2>Outside supporting panel</h2>
+        <p>Keep this panel light. It can carry a short proof point, brand signal, or teaser copy.</p>
+      </div>
+      <div class="panel">
+        <h1>{{headline_text}}</h1>
+        <p>Use the outside hero panel to earn the open with one benefit and one clear reason to keep reading.</p>
+      </div>
+    </div>
+  </body>
+</html>
