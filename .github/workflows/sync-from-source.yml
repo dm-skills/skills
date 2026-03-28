@@ -1,0 +1,60 @@
+name: Sync From Source Repo
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 * * * *"
+
+concurrency:
+  group: sync-from-source-repo
+  cancel-in-progress: true
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: write
+
+    steps:
+      - name: Check out public repository
+        uses: actions/checkout@v4
+
+      - name: Verify source sync token is configured
+        env:
+          SOURCE_REPO_SYNC_TOKEN: ${{ secrets.SOURCE_REPO_SYNC_TOKEN }}
+        run: |
+          if [ -z "${SOURCE_REPO_SYNC_TOKEN}" ]; then
+            echo "SOURCE_REPO_SYNC_TOKEN is not configured."
+            exit 1
+          fi
+
+      - name: Clone canonical source repository
+        env:
+          SOURCE_REPO_SYNC_TOKEN: ${{ secrets.SOURCE_REPO_SYNC_TOKEN }}
+        run: |
+          source_dir="$(mktemp -d)"
+          git clone --depth 1 "https://x-access-token:${SOURCE_REPO_SYNC_TOKEN}@github.com/ckorhonen/dm-skills.git" "${source_dir}/source"
+          {
+            echo "SOURCE_DIR=${source_dir}/source"
+          } >> "${GITHUB_ENV}"
+
+      - name: Sync curated files from source
+        run: |
+          find . -maxdepth 1 -mindepth 1 -type d -name 'dm-*' -exec rm -rf {} +
+          rsync -a "${SOURCE_DIR}/skills/" ./
+          cp "${SOURCE_DIR}/LICENSE" ./LICENSE
+
+      - name: Commit and push updates
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          if [ -z "$(git status --short)" ]; then
+            echo "No public repo changes to sync."
+            exit 0
+          fi
+
+          git add --all
+          git commit -m "Sync skills from ckorhonen/dm-skills"
+          git push origin HEAD:main
